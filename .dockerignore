@@ -1,0 +1,8 @@
+.idea/
+__pycache__/
+**/__pycache__/
+*.pyc
+.git/
+.env
+.env.*
+README.md

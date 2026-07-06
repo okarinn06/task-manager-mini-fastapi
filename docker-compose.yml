@@ -1,0 +1,29 @@
+services:
+  api:
+    image: khanhdang21/task-manager-mini-fastapi:latest
+    container_name: task-manager-api
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    env_file:
+      - ".env"
+    depends_on:
+      - mongo
+    networks:
+      - task-manager-net
+
+  mongo: 
+    image: mongo:7
+    container_name: task-manager-mongo
+    restart: unless-stopped
+    volumes:
+      - mongo_data: /data/db
+    networks:
+      - task-manager-net
+
+networks:
+  task-manager-net: 
+    driver: bridge
+
+volumes:
+  mongo_data:
