@@ -17,7 +17,7 @@ services:
     container_name: task-manager-mongo
     restart: unless-stopped
     volumes:
-      - mongo_data: /data/db
+      - mongo_data:/data/db
     networks:
       - task-manager-net
 
