@@ -1,7 +1,7 @@
 pipeline {
     agent any
 
-    enviroment {
+    environment {
         DOCKERHUB_USER = "khanhdang21"
         APP_NAME = "task-manager-mini-fastapi"
         IMAGE_NAME     = "${DOCKERHUB_USER}/${APP_NAME}"
